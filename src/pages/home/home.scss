@@ -1,0 +1,262 @@
+page-home {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    // banner
+    .banner{
+        height:168px;
+        position: relative;
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .swiper-pagination-bullet{
+        background: #999;
+        height:5px;
+        width:5px;
+
+    }
+    .swiper-pagination-bullet-active{
+        background: #F05C38;
+        height:5px;
+        width:5px;
+        border-radius: 100%;
+    }
+    // 搜索框
+    .search{
+        height:30px;
+        width:100%;
+        position: absolute;
+        top:10px;
+        z-index: 666;
+        .location{
+            position: absolute;
+            left:10px;
+            top:5px;
+            span{
+                font-size: 14px;
+                color: white;
+                float: left;
+                // width: 32px;
+                // overflow: hidden; /*自动隐藏文字*/
+                // text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+                // white-space: nowrap;/*强制不换行*/
+            }
+            ion-icon{
+                font-size: 22px;
+                color: white;
+                margin-left: 3 px;
+                float: left;
+            }
+        }
+        .searchInput{
+            padding: 0;
+            background: none;
+            height:30px;
+            width:55%;
+            margin: 0 auto;
+            border:none;
+            margin-top: -5px;
+            .searchbar-search-icon{
+                // margin-top: 3px; // 手机上不要这个
+            }
+            .searchbar-input{
+                color: #777;
+                font-size: 10px;
+                border-radius: 30px !important;
+            }
+        }
+        .email{
+            position: absolute;
+            top:5px;
+            right:20px;
+            font-size: 30px !important;
+            color: white;
+        }
+        .point{
+            height: 14px;
+            width: 14px;
+            background: red;
+            border-radius: 100%;
+            position: absolute;
+            top:5px;
+            right:15px;
+            color: white;
+            font-size: 10px;
+            text-align: center;
+            line-height: 14px;
+        }
+    }
+    // 菜品选择
+    
+    .chooseFood{
+        // width:100%;
+        height: auto;
+        .slide-zoom{
+            margin-bottom: 25px !important;
+        }
+        .swiper-pagination-bullets{
+            bottom: 5px;
+        }
+        .box{
+            // height:180px;
+            width:calc(100% - 20px);
+            margin: 0 auto;
+            // border: 1px solid red;
+            .foodImg{
+                width:calc((100% - 20px) / 5);
+                float: left;
+                margin-right: 4px;
+                margin-top: 5px;
+                .img{
+                    width:44px;
+                    height:44px;
+                    border-radius: 100%;
+                    display: block;
+                    margin: 0 auto;
+                    margin-top: 5px;
+                }
+                .foodTitle{
+                    text-align: center;
+                    color: black;
+                    font-size: 12px;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+    // 公告
+    .notice{
+        margin: 0;
+        padding: 0;
+        border-top:10px solid #D8D8D8;
+        border-bottom:10px solid #D8D8D8;
+        img{
+            display: block;
+            height:35px;
+            width: 35px;
+        }
+        p{
+            font-size: 16px;
+            color: black;
+        }
+        .label-ios{
+            margin: 0 !important;
+        }
+    }
+
+    // 推荐菜品
+    .row{
+        border-bottom: 1px solid #D7D7D7;
+    }
+    [col-6],[col-3]{
+        border-right: 1px solid #D7D7D7;
+    }
+    [col-6]{
+        padding-top: 10px;
+        .name{
+            float: left;
+            width: 50%;
+            margin-top: 20px;
+            p{
+                text-align: center;
+                font-size: 18px;
+                color: #626262;
+                margin: 5px 0;
+            }
+            span{
+                text-align: center;
+                font-size: 12px;
+                color: #3297DB;
+                display: block;
+            }
+        }
+        img{
+            width: 80px;
+            height:80px;
+            display: block;
+            float: left;
+            // border:1px solid #999;
+            border-radius: 100%;
+        }
+    }
+    
+    [col-3]{
+        .name{
+           text-align: center;
+           p{
+                font-size: 16px;
+                color: #626262;
+           }
+           span{
+                font-size: 12px;
+                color: #DB39DD;
+                // display: block;
+            }
+        }
+        img{
+            display: block;
+            height:50px;
+            width:50px;
+            // border:1px solid black;
+            border-radius: 100%;
+            margin: 0 auto;
+        }
+    }
+
+    // 附近店铺
+    .nearShop{
+        padding-left: 10px;
+        margin: 8px 0;
+        ion-icon{
+            color: #F16240;
+            font-size: 20px;
+        }
+        span{
+            font-size: 20px;
+            color: #626262;
+        }
+        p{
+            float: right;
+            margin-right: 20px;
+            font-size: 14px;
+            margin-top: 6px;
+            color: #626262;
+        }
+    }
+
+    // 附近店铺列表页
+    ion-icon{
+        font-size: 14px;
+        color: #C9C9C9;
+    }
+    .list-ios{
+        margin: 0;
+    }
+    .item item-block item-ios{
+        border-bottom: none;
+    }
+    .item-ios ion-avatar ion-img, .item-ios ion-avatar img{
+        height:60px;
+        width:60px;
+        // border:1px solid black;
+        border-radius: 5px;
+    }
+    .position{
+        font-size: 10px;
+        color: #959595;
+    }
+    // 没有店铺的情况
+    .noneShop{
+        text-align: center;
+        margin: 10px 0 20px 0;
+        font-size: 18px;
+        color: #999;
+        font-family: 'PingFang';
+    }
+    
+}

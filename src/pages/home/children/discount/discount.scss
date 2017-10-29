@@ -1,0 +1,63 @@
+page-discount {
+    // 头部
+    .toolbar-title-ios{
+        color: white;
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+        background: #F05C38;
+        border: none;
+    }
+    .bar-button-default-ios{
+        color: white;
+    }
+    .back-button-text-ios{
+        display: none;
+    }
+
+     // 底部的固定样式
+     .scroll-content{
+        margin-bottom: 0 !important;
+    }
+    .fixed-content {
+        margin-bottom: 0 !important;
+    }
+
+    // content
+    ion-content{
+        background: #F2F2F2 !important;
+        .col{
+            padding: 10px 0;
+        }
+        [col-3]{
+            text-align: center;
+            .price{
+                font-size: 20px;
+                color: #F05C38;
+                font-weight: bolder;
+            }
+            .useMes{
+                font-size: 12px;
+                color: black;
+            }
+        }
+        [col-7]{
+            text-align: left;
+            .text{
+                font-size: 20px;
+                color: black;
+            }
+            .useTime{
+                font-size: 12px;
+                color: #555052;
+            }
+        }
+        [col-2]{
+            font-size: 12px;
+            color: #FAA23B;
+            padding-bottom: 3px;
+            text-align: right;
+            margin-top: 28px;
+        }
+    }
+    
+}

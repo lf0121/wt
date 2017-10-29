@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <input class="searchInput" placeholder="搜索" autofocus="autofocus" [(ngModel)]='searchWord' (input)="onInput( searchWord )" (keydown)="onInput( searchWord )" />
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="box">
+      <p>热搜：</p>
+      <span class="keyWord" *ngFor='let mes of keyWord' (tap)='enterSearchResult( mes.name )' >{{ mes.name }}</span>      
+  </div>
+  
+
+</ion-content>

@@ -1,0 +1,128 @@
+
+<ion-content>
+
+    <!-- banner -->
+    <ion-slides (ionSlideDidChange)="autoPlay()" #ionSlides [loop]="true" autoplay="2000" class="banner" *ngIf='lenth>=1' pager>
+        <ion-slide *ngFor='let img of bannerImg'>
+            <img src="{{img.image}}" alt="">
+        </ion-slide>
+        
+    </ion-slides>
+
+    <!-- 搜索框 -->
+    <div class="search">
+        <div class="location" (tap)='enterLocation()' >
+            <span>{{ localAddress }}</span>
+            <ion-icon name="ios-arrow-down"></ion-icon>
+        </div>
+        <ion-searchbar class="searchInput" placeholder="新品美食、餐厅预定、打折" (tap)='openHotSearch()'></ion-searchbar>
+    </div>
+
+    <!-- 菜品选择 -->
+    <ion-slides class="chooseFood" pager>
+        
+        <ion-slide>
+            <div class="box" *ngIf='len>=1'>
+                <div class="foodImg" *ngFor='let item of foodGroup' (tap)='openSearchResult( item )'>
+                    <img class='img' src="{{ item.image }}" alt="">
+                    <p class="foodTitle">{{ item.name }}</p>
+                </div>
+
+                <div style='clear:both'></div>
+            </div>
+        </ion-slide>
+    </ion-slides>
+
+    <!-- 公告 -->
+    <ion-list class="notice">
+        <button ion-item (tap)='lookNotice(i,item)' >
+            <img item-start src="../assets/images/notice.png" alt="">
+            <p *ngFor='let item of notice;let i=index;'>{{ item.title }}</p >
+        </button>  
+    </ion-list>
+
+    <!-- 推荐菜品 -->
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6 (tap)='openSearchResult(recOneName)'>
+                <div class="name">
+                    <p>{{ recOneName }}</p>
+                    <span>￥{{ recOnePrice }}</span>
+                </div>
+                <img src="{{ recOneImg }}" alt="">
+            </ion-col>
+            <ion-col col-3 (tap)='openSearchResult(recTwoName)'>
+                <div class="name">
+                    <p>{{ recTwoName }}</p>
+                    <span>￥{{ recTwoPrice }}</span>
+                </div>
+                <img src="{{ recTwoImg }}" alt="">
+            </ion-col>
+            <ion-col col-3 (tap)='openSearchResult(recThereName)'>
+                <div class="name">
+                    <p>{{ recThereName }}</p>
+                    <span>￥{{ recTherePrice }}</span>
+                </div>
+                <img src="{{ recThereImg }}" alt="">
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col col-6 (tap)='openSearchResult(recFourName)'>
+                <img src="{{ recFourImg }}" alt="">
+                <div class="name">
+                    <p>{{ recFourName }}</p>
+                    <span>￥{{ recFourPrice }}</span>
+                </div>
+            </ion-col>
+            <ion-col col-3 (tap)='openSearchResult(recFiveName)'>
+                <div class="name">
+                    <p>{{ recFiveName }}</p>
+                    <span>￥{{ recFivePrice }}</span>
+                </div>
+                <img src="{{ recFiveImg }}" alt="">
+            </ion-col>
+            <ion-col col-3 (tap)='openSearchResult(recSixName)'>
+                <div class="name">
+                    <p>{{ recSixName }}</p>
+                    <span>￥{{ recSixPrice }}</span>
+                </div>
+                <img src="{{ recSixImg }}" alt="">
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+      
+    <!-- 附近店铺 -->
+    <div class="nearShop">
+        <ion-icon name="md-heart"></ion-icon>
+        <span>附近店铺</span>
+        <!-- <p>更多</p> -->
+    </div>
+
+      <!-- 附近店铺列表 -->
+    <ion-list *ngIf='haveData'>
+        <ion-item (tap)='openShopHome( item )' *ngFor='let item of nearShop; let i=index;' >
+            <ion-avatar item-start>
+                <img src="{{ item.image }}">
+            </ion-avatar>
+            <h2>{{ item.bname }}</h2>
+            <ion-icon name="ios-star"></ion-icon>
+            <ion-icon name="ios-star"></ion-icon>
+            <ion-icon name="ios-star"></ion-icon>
+            <ion-icon name="ios-star"></ion-icon>
+            <ion-icon name="ios-star"></ion-icon>
+            <p>
+                <ion-icon name="ios-pin"></ion-icon>
+                {{ item.gps_address }}
+            </p>
+            <p item-end class="position">{{ item.distance }}KM</p>
+        </ion-item>
+
+    </ion-list>
+
+    <p class="noneShop" *ngIf='!haveData'>
+        抱歉，附近暂无店铺哦
+    </p>
+    
+
+</ion-content>

@@ -1,0 +1,107 @@
+page-searchResult {
+    // 顶部搜索框
+    ion-navbar{
+        background: white;
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+        background: white;
+        
+    }
+    .back-button-text-ios{
+        display: none;
+    }
+    .button-inner{
+        color: #7E7E7E;
+    }
+    // .searchInput{
+    //     padding: 0;
+    //     background: none;
+    //     margin: 0 auto;
+    //     border:none;
+    //     // margin-top: -5px;
+    //     .searchbar-search-icon{
+    //         display: none;
+    //     }
+    //     .searchbar-input{
+    //         color: #777;
+    //         font-size: 10px;
+    //         border-radius: 30px !important;
+    //         padding-left: 15px !important;
+    //     }
+    // }
+    .searchInput{
+        width: 80%;
+        margin: 0 auto;
+        border:1px solid #ccc;
+        border-radius: 35px;
+        padding: 5px 10px;
+        margin-left: 20px;
+        // background: #ccc;
+    }
+    .searchbar-input-container{
+        width: 95% !important;
+    }
+
+    // 底部的固定样式
+    .scroll-content{
+        margin-bottom: 0 !important;
+    }
+    .fixed-content {
+        margin-bottom: 0 !important;
+    }
+
+    // 按钮
+    .grid{
+        border-bottom: 1px solid #F2F2F2;
+        .button-ios{
+            margin: 0;
+            font-size: 14px;
+        }
+    }
+    .middle{
+        border-left: 1px solid #E9E9E9;
+    }
+    [col-6]{
+        text-align: center;
+    }
+    .button-clear-ios{
+        color: #A7A7A7;
+        ion-icon{
+            margin-left: 5px;
+        }
+    }
+
+    // 附近的店铺
+    ion-icon{
+        font-size: 14px;
+        color: #C9C9C9;
+    }
+    .list-ios{
+        margin: 0;
+    }
+    .item item-block item-ios{
+        border-bottom: none;
+    }
+    .item-ios ion-avatar ion-img, .item-ios ion-avatar img{
+        height:60px;
+        width:60px;
+        border:1px solid black;
+        border-radius: 5px;
+    }
+    .position{
+        font-size: 10px;
+        color: #959595;
+    }
+    .number{
+        font-size: 10px;
+        color: #959595;
+    }
+    ion-item{
+        border:none !important;
+        border-bottom:5px solid #F5F5F5 !important;
+    }
+    .item-inner{
+        border:none !important;
+    }
+    
+}

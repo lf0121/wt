@@ -1,0 +1,12 @@
+page-modal-page {
+    ion-content{
+        background: rgba(0,0,0,0.3) !important;
+        ion-list{
+            position: relative !important;
+            top:0;
+            width: 100%;
+            height: auto;
+        }
+    }
+    
+}

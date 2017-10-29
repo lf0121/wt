@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+        订单
+    </ion-title>
+  </ion-navbar>
+  <ion-segment [(ngModel)]="choose">
+    <ion-segment-button value="mine">
+        <span>我的订单</span>
+    </ion-segment-button>
+    <ion-segment-button value="friend">
+        <span>朋友订单</span>
+    </ion-segment-button>
+    <ion-segment-button value="reserve">
+        <span>预定订单</span>
+    </ion-segment-button>
+</ion-segment>
+</ion-header>
+
+
+<ion-content>
+    <!--下拉刷新  -->
+	<ion-refresher (ionRefresh)="doRefresh($event)" >
+        <ion-refresher-content
+                        pullingIcon="ios-sync"
+                        pullingText="下拉刷新"
+                        refreshingSpinner="circles"
+                        refreshingText="加载中...">
+        </ion-refresher-content>
+    </ion-refresher>
+  
+    <!-- 显示选择内容 -->
+    <div [ngSwitch]="choose">
+        <!-- 我的订单 -->
+        <div *ngSwitchCase="'mine'"  >
+            <ion-list class="myOrder" *ngFor='let list of orderList;let i=index;' (click)='shopOrderDetail(list,i);'  >
+                <ion-item>
+                    <p class="shopName">{{ list.name }}</p>
+                    <ion-grid class="myorderGrid">
+                        <ion-row>
+                            <ion-col col-3>
+                                <img src="{{ list.image }}" alt="">
+                            </ion-col>
+                            <ion-col col-9>
+                                <p class="number">数量：{{ list.fnum }}</p>
+                                <p class="allPrices">总价：￥{{ list.discount_price }}</p>
+                                <p class="address">地址：{{ list.gps_address }}</p>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    <button class="payMoneyIng">{{ list.status }}</button>                    
+                    <button class="deleteOrder" (click)='deleteOrder(list,i);$event.stopPropagation();' >删除订单</button>
+                </ion-item>
+            </ion-list>
+        </div>
+
+        <!-- 朋友的订单 -->
+        <div *ngSwitchCase="'friend'"  >
+            <ion-list class="friendsOrder" *ngFor='let aa of friendsList;let i=index;'>
+                <ion-item>
+                    <p class="shopName">{{ aa.name }}</p>
+                    <ion-grid class="myorderGrid">
+                        <ion-row>
+                            <ion-col col-3>
+                                <img src="{{ aa.image }}" alt="">
+                            </ion-col>
+                            <ion-col col-9>
+                                <p class="number">数量：{{ aa.fnum }}</p>
+                                <p class="allPrices">总价：￥{{ aa.order_price }}</p>
+                                <p class="address">地址：{{ aa.gps_address }}</p>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    <button class="payMoneyIng">{{ aa.status }}</button>                    
+                    <button class="deleteOrder" (click)='deleteFriendOrder(aa,i)' >删除订单</button>
+                </ion-item>
+            </ion-list>
+        </div>
+
+        <!-- 预定订单 -->
+        <div *ngSwitchCase="'reserve'"  >
+            <ion-list class="reserveList" *ngFor='let item of reserveArray;let i=index;' >
+                <ion-item >
+                    <div class="header">
+                        <img src="../assets/images/shopImg.png" alt="">
+                        <span class="shopName">{{ item.name }}</span>
+                        <div class="time">{{ reserveArrayTime[i] }}</div>
+                        <div class="status">{{ item.status }}</div>
+                    </div>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col col-6>
+                                <p class="name">预订者姓名：{{ item.booked_username }}</p>
+                                <p class="eatTime">就餐时间：{{ item.booked_time }}</p>
+                                <p class="house">包房：{{ item.table_name }}</p>
+                            </ion-col>
+                            <ion-col col-6>
+                                <p class="phoneNumber">手机号：{{ item.mobile }}</p>
+                                <p class="eatNum">就餐人数：{{ item.people_number }}</p>
+                                <p class="money">定金：{{ item.order_price }}</p>
+                            </ion-col>
+                        </ion-row>
+                        <p class="status">商家受理状态：{{ item.status }}</p>
+                    </ion-grid>
+                    <div class="remarks">
+                        <p class="title">备注：</p>
+                        <p class="msg">{{ item.remark }}</p>
+                    </div>
+                    <button class="btn" (tap)='goPay(item,i)' >未付款</button>
+                </ion-item>
+            </ion-list>
+            
+        </div>
+      
+    </div>
+
+</ion-content>

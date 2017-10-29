@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>订单修改</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <!-- 新订单 -->
+    <!-- <div class="newOrder">
+        <ion-grid>
+            <ion-row>
+              <ion-col col-2>
+                <img src="../assets/images/orders.png" alt="">
+              </ion-col>
+              <ion-col col-10>
+                <h3>11</h3>
+                <p>就餐地址：</p>
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div> -->
+    <!-- 客户昵称 -->
+    <p class="username">{{ user }}</p>
+    <!-- 未接订单 -->
+    <div class="orderIng" *ngFor='let list of showArray;let i=index'>
+      <ion-grid>
+          <ion-row>
+            <ion-col col-5>
+              <p>{{ list.name }}</p>
+            </ion-col>
+            <ion-col col-3>
+              <p>￥{{ list.price }}/{{ list.unit_name }}</p>
+            </ion-col>
+            <ion-col col-2>
+                <p>X{{ list.num }}</p>
+            </ion-col>
+            <ion-col col-2>
+                <img src="../assets/images/edit.png" alt="" (tap)='editPeople( list,i )' >
+                <ion-icon name="ios-trash" (tap)='deleteList( i,list )' ></ion-icon>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+  </div>
+    <!-- 订单具体信息 -->
+    <div class="orderDetail">
+      <p>订单编号：{{ orderNumber }}</p>
+      <p>订餐时间：{{ time }}</p>
+      <p>就餐人数：{{ eatNum }}
+        <span (tap)='openModal()' class="changeNumber">(点击可以修改就餐人数哦)</span>
+      </p>
+
+      <p>手机号：{{ user }}</p>
+      <p>数&nbsp;&nbsp;&nbsp;量：{{ allNum }}</p>
+      <p>
+        <span class="old">总计：￥{{ allPrice }}</span>
+        <span class="cheap">优惠：￥{{ freePrice }}.00</span>
+      </p>
+      <p class="actualPayment">实付款：￥{{ payMoney }}</p>
+    </div>
+    
+</ion-content>
+

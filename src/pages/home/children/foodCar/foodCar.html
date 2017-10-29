@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>美食车</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="alertMes">
+      <p>亲，菜品数量除份以外，其余的都以实际为主的哦</p>
+    </div>
+    
+    <!-- 列表 -->
+    <ion-list class="foodList">
+        <ion-item *ngFor='let item of foodList; let i = index;'>
+            <ion-avatar item-start>
+                <img src="{{ item.image }}">
+            </ion-avatar>
+            <h2>{{ item.name }}</h2>
+            
+            <div class="boom">
+                <span>￥{{ item.price }}/{{ item.unit_name }}</span>
+                <div class="btn">
+                    <ion-icon class="icon remove" name="md-remove" (tap)='remove(i,item)' ></ion-icon>
+                          {{ item.num }}
+                    <ion-icon class="icon add" name="md-add" (tap)='add(i,item)' ></ion-icon>
+                </div>
+            </div>
+            <ion-icon item-end name="ios-close" (tap)='spliceItem(i,item)' ></ion-icon>
+        </ion-item>
+
+       
+        
+    </ion-list>
+      
+    
+    
+
+</ion-content>
+
+<ion-footer class="footer">
+    <ion-icon class="aaaa" name="ios-cart-outline" ></ion-icon>
+    <span class="footerNumber">{{ allNum }}</span>
+    <ion-toolbar>
+        <ion-title>￥{{ allPrice }}</ion-title>
+        <button (tap)='openPay( allPrice )'>去结算</button>
+    </ion-toolbar>
+</ion-footer>

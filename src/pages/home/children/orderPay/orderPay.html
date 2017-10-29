@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>订单支付</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- 内容区 -->
+<ion-content>
+  <ion-list>
+      <ion-item>
+          <p class="titleMes">订单金额</p>
+          <span class="changeColor">￥{{ allPrice }}</span>
+      </ion-item>
+      <button ion-item >
+          <p class="titleMes">可用余额</p>
+          <span>￥0.00</span>
+      </button>  
+      <button ion-item (tap)='enterDiscount()' >
+          <p class="titleMes">优惠券</p>
+          <span>请选择使用优惠券</span>
+      </button>
+  </ion-list>
+
+  <!-- 选择付款方式 -->
+  <ion-list class="radioGroup" radio-group>
+      <ion-list-header>
+        选择支付方式
+      </ion-list-header>
+    
+      <ion-item>
+        <ion-label>
+          <img class="payImg" src="../assets/images/wechat_1.png" alt="">
+          微信支付</ion-label>
+        <ion-radio checked="true" value="go"></ion-radio>
+      </ion-item>
+    
+      
+    
+  </ion-list>
+
+  <!-- 确定按钮 -->
+  <button ion-button round outline>确认支付</button>
+
+</ion-content>

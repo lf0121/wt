@@ -1,0 +1,22 @@
+page-error {
+    ion-title{
+        display: none;
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+        border: none;
+        background: white;
+        
+    }
+    ion-content{
+        img{
+            display: block;
+            margin-top: 30%;
+        }
+        p{
+            text-align: center;
+            color: #989898;
+            font-size: 16px;
+        }
+    }
+    
+}

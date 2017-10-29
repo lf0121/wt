@@ -1,0 +1,73 @@
+page-modalPer {
+    ion-content{
+        background: rgba(0,0,0,0.5) !important;
+        position: relative;
+        .show{
+            width: 250px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            position: absolute;
+            top:20%;
+            left:50%;
+            margin-left: -125px;
+            height: auto;
+            padding-bottom: 36px;
+            .head{
+                background: #EE5938;
+                color: white;
+                text-align: center;
+                font-size: 14px;
+                padding: 8px 0;
+            }
+            .scroll{
+                height: 280px;
+                background: white;
+                overflow-y: scroll;
+                p{
+                    // display: block;
+                    margin: 0;
+                    font-size: 14px;
+                    color: black;
+                    text-align: center;
+                    padding: 8px 0;
+                    // width: 100%;
+                    border-bottom: 1px solid #D7D7D7;
+                }
+            }
+            .active{
+                background: #D4D1D1;
+            }
+
+            .btn{
+                position: absolute;
+                bottom: 0;
+                z-index: 999;
+                background: pink;
+                width: 100%;
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 10px;
+                p{
+                    width: 50%;
+                    float: left;
+                    text-align: center;
+                    padding: 8px 0;
+                    margin: 0;
+                }
+                .cancel{
+                    color: #333333;
+                    background: #999999;
+                }
+                .sure{
+                    background: #F05C38;
+                    color: white;
+                }
+            }
+
+
+        }
+        
+        
+    }
+    
+}

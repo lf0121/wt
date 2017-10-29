@@ -1,0 +1,43 @@
+page-serve {
+    // 头部
+    .toolbar-title-ios{
+        color: white;
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+        background: #F05C38;
+        border: none;
+    }
+    .bar-button-default-ios{
+        color: white;
+    }
+    .back-button-text-ios{
+        display: none;
+    }
+
+    // 底部的固定样式
+    .scroll-content{
+        margin-bottom: 0 !important;
+    }
+    .fixed-content {
+        margin-bottom: 0 !important;
+    }
+
+    // 服务项目
+    [col-4]{
+        img{
+            display: block;
+            height: 50px;
+            width: 50px;
+            margin: 0 auto;
+        }
+        p{
+            font-size: 14px;
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+    }
+
+    
+    
+}

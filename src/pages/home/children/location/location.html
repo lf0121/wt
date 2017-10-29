@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-searchbar class="searchInput" placeholder="城市名/拼音"></ion-searchbar>
+  </ion-navbar>
+  <ion-grid class='locationGrid'>
+      <ion-row>
+          <ion-col col-2>当前：</ion-col>
+          <ion-col col-7>
+              <div>
+                <span>{{ cityName }}</span>
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </div>
+              <div>
+                <span>{{ secName }}</span>
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </div>
+              <div>
+                <span>{{ thereName }}</span>
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </div>
+          </ion-col>
+          <ion-col col-3>
+              <button (tap)='sure()' >确定</button>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content>
+  <!-- 显示区域 -->
+  <!-- list -->
+  <ion-list>
+      <ion-item *ngFor='let list of showArray;let i=index' (tap)='chooseCity( list )' >
+          {{ list.name }}
+      </ion-item>
+  </ion-list>
+    
+  
+
+</ion-content>

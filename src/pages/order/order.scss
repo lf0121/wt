@@ -1,0 +1,230 @@
+page-order {
+    // 头部
+    .toolbar-title-ios{
+        color: white;
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+        background: #F05C38 !important;
+        border: none;
+    }
+    .toolbar-background-ios{
+        background: #F05C38 !important;
+        
+    }
+    // 选择的grid
+    ion-segment{
+        // border-bottom: 2px solid #ccc;
+        background: white;
+        border-bottom: 3px solid #E4E2E2;
+    }
+    .segment-button{
+        border:none !important;
+        color: #999999 !important;
+    }
+    // 激活效果
+    .segment-button.segment-activated{
+        background: none !important;
+        
+        span{
+            color: black !important;
+            border-bottom: 3px solid #F05C38 !important;
+            padding-bottom: 5px;
+        }
+        
+    }
+
+    // 内容区
+    ion-content{
+        background: #E4E2E2 !important;
+        ion-segment{
+            // border-bottom: 2px solid #ccc;
+            background: white;
+        }
+        .segment-button{
+            border:none !important;
+            color: #999999 !important;
+        }
+        // 激活效果
+        .segment-button.segment-activated{
+            background: none !important;
+            
+            span{
+                color: black !important;
+                border-bottom: 3px solid #F05C38 !important;
+                padding-bottom: 5px;
+            }
+            
+        }
+        // 我的订单
+        .myOrder{
+            margin-top: 10px;
+            margin-bottom: 0 !important;
+            .shopName{
+                font-size: 14px;
+                color: #F05C38;
+                margin: 0;
+                padding: 5px 0;
+                border-bottom: 1px solid #ccc;
+                padding-left: 10px;
+            }
+            .myorderGrid{
+                margin-bottom: 20px;
+            }
+            ion-item{
+                border:0 !important;
+            }
+            [col-3]{
+                img{
+                    height: 60px;
+                    width: 70px;
+                    border:1px solid #ccc;
+                    padding: 3px;
+                    display: block;
+                }
+            }
+            [col-9]{
+                text-align: left;
+                font-size: 12px;
+                
+                
+            }
+            .deleteOrder{
+                border:1px solid #F05C38;
+                color: #F05C38;
+                background: white;
+                padding: 5px 10px;
+                border-radius: 5px;
+                float: right;
+                margin-right: 10px;
+            }
+            .payMoneyIng{
+                padding: 5px 10px;
+                border-radius: 5px;
+                float: right;
+                margin-right: 10px;
+                border:1px solid #999999;
+                color: #999999;
+                background: white;
+            }
+        }
+        // 朋友订单
+        .friendsOrder{
+            margin-top: 10px;
+            margin-bottom: 0 !important;
+            .shopName{
+                font-size: 14px;
+                color: #F05C38;
+                margin: 0;
+                padding: 5px 0;
+                border-bottom: 1px solid #ccc;
+                padding-left: 10px;
+            }
+            .myorderGrid{
+                margin-bottom: 20px;
+            }
+            ion-item{
+                border:0 !important;
+            }
+            [col-3]{
+                img{
+                    height: 60px;
+                    width: 70px;
+                    border:1px solid #ccc;
+                    padding: 3px;
+                    display: block;
+                }
+            }
+            [col-9]{
+                text-align: left;
+                font-size: 12px;
+            }
+            .deleteOrder{
+                border:1px solid #F05C38;
+                color: #F05C38;
+                background: white;
+                padding: 5px 10px;
+                border-radius: 5px;
+                float: right;
+                margin-right: 10px;
+            }
+            .payMoneyIng{
+                padding: 5px 10px;
+                border-radius: 5px;
+                float: right;
+                margin-right: 10px;
+                border:1px solid #999999;
+                color: #999999;
+                background: white;
+            }
+        }
+        // 预定页面
+        .reserveList{
+            margin-top: 10px;
+            margin-bottom: 0 !important;
+            // 头部
+            .header{
+                border-bottom:1px solid #ccc;
+                height: 28px;
+                color: #999999;
+                img{
+                    height: 16px;
+                    width: 16px;
+                    float: left;
+                    margin-top: 2px;
+                    margin-right: 4px;
+                }
+                .shopName{
+                    font-size: 14px;
+                    float: left;
+                }
+                .status{
+                    font-size: 14px;
+                    float: right;
+                    margin-right: 15px;
+                }
+                .time{
+                    font-size: 14px;
+                    float: right;
+                    margin-right: 10px;
+                }
+            }
+            ion-item{
+                border:0 !important;
+            }
+            [col-6]{
+                width: 50%;
+                max-width: 50%;
+                overflow: hidden; /*自动隐藏文字*/
+                text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+                white-space: nowrap;/*强制不换行*/
+            }
+            .status{
+                padding-left: 5px;
+            }   
+            .remarks{
+                padding-left: 10px;
+                width: 100%;
+                margin-top: 10px;
+                word-break:break-all;
+                word-wrap:break-word;
+                .msg{
+                    width: 100%;
+                    word-wrap:break-word;
+                    word-break:break-all;
+                    min-height: 25px;
+                }
+            } 
+            .btn{
+                float: right;
+                padding: 5px 10px;
+                border-radius: 5px;
+                background: #F05C38;
+                color: white;
+                font-size: 12px;
+            }                        
+        }
+
+    }
+
+
+}

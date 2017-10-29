@@ -1,0 +1,73 @@
+page-save {
+    // 头部
+    .toolbar-title-ios{
+        color: white;
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+        background: #F05C38;
+        border: none;
+    }
+    .bar-button-default-ios{
+        color: white;
+    }
+    .back-button-text-ios{
+        display: none;
+    }
+
+    p{
+        text-align: center;
+        color: #F05C38;
+        font-size: 14px;
+    }
+
+    // 列表
+    ion-list{
+        margin: 0 !important;
+        .label-ios{
+            margin: 0 !important;
+        }
+        .item-ios{
+            padding-left: 0 !important;
+        }
+    }
+    .grid{
+        padding: 0 !important;
+        .col{
+            padding-bottom: 0 !important;
+        }
+    }
+    [col-3]{
+        text-align: left;
+        img{
+            height: 60px;
+            width: 70px;
+            display: block;
+            border: 1px solid #cccccc;
+        }
+        
+    }
+    [col-7]{
+        text-align: left;
+        h6{
+            font-size: 16px;
+            color: #333333;
+            margin-bottom: 5px;
+        }
+        p{
+            font-size: 14px;
+            text-align: left;
+            color: #999999;
+            margin-top: 10px;
+        }
+    }
+    [col-2]{
+        text-align: center;
+        ion-icon{
+            text-align: center;
+            font-size: 22px;
+            color: #F05C38;
+            margin-top: 20px;
+        }
+    }
+    
+}

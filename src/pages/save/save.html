@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>收藏</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <p *ngIf='noneSave'>暂无收藏店铺哦</p>
+
+    <ion-list *ngIf='!noneSave' >
+        <ion-item *ngFor='let item of saveArray;let i=index;' (tap)='showSave( item,i )' >
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-3>
+                        <img src="{{ item.image }}" alt="">
+                    </ion-col>
+                    <ion-col col-7>
+                        <h6>{{ item.bname }}</h6>
+                        <p>{{ item.gps_address }}</p>
+                    </ion-col>
+                    <ion-col col-2>
+                        <ion-icon name="ios-star" (tap)='deleteItem( item,i )' ></ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+        
+    </ion-list>
+    
+
+</ion-content>

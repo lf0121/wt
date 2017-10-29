@@ -1,0 +1,16 @@
+page-modal {
+    ion-content{
+        background: rgba(0,0,0,0.5) !important;
+        position: relative;
+        img{
+            height: 300px;
+            width: 300px;
+            display: block;
+            position: absolute;
+            top:20%;
+            left:50%;
+            margin-left: -150px;
+        }
+    }
+    
+}

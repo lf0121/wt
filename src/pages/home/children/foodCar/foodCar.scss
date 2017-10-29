@@ -1,0 +1,184 @@
+page-foodCar {
+    // 头部
+    .toolbar-title-ios{
+        color: white;
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+        background: #F05C38;
+        border: none;
+    }
+    .bar-button-default-ios{
+        color: white;
+    }
+    // 返回按钮文字
+    .back-button-text-ios{
+        // display: none;
+        font-family: 'PingFang'
+    }
+
+     // 底部的固定样式
+    //  .scroll-content{
+    //     margin-bottom: 0 !important;
+    // }
+    .fixed-content {
+        margin-bottom: 0 !important;
+    }
+
+    .item-ios ion-avatar img{
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    // 内容区
+    ion-content{
+        background: #ECEBF1 !important;
+        // 提示消息
+        .alertMes{
+            background: white;
+            p{
+                font-size: 14px;
+                color: #F3775A;
+                margin: 0;
+                padding: 10px 0 10px 15px;
+                width: 95%;
+                overflow: hidden; /*自动隐藏文字*/
+                text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+                white-space: nowrap;/*强制不换行*/
+            }
+            
+        }
+
+        // 列表区
+        .foodList{
+            margin: 0;
+            margin-top: 10px;
+            .item-ios {
+                border-top: none !important;
+            }
+            .item-ios ion-avatar{
+                margin: 0 !important;
+                height: 55px;
+                width: 55px;
+                border-radius: 5px;
+                border:1px solid #ccc;
+                margin-right: 10px;
+            }
+            .item-inner{
+                margin-left: 10px;
+                h2{
+                    font-size: 14px;
+                    color: #484848;
+                }
+                .boom{
+                    span{
+                        font-size: 10px;
+                        color: #8D8D8D;
+                    }
+                    .btn{
+                        height: 25px;
+                        width: 90px;
+                        border:1px solid #D1D1D1;
+                        float: right;
+                        margin-right: 20px;
+                        text-align: center;
+                        color: #F05C39;
+                        font-weight: bold;
+                        .icon{
+                            font-size: 22px;
+                            color: #878787;
+                        }
+                        .remove{
+                            float: left;
+                            margin-left: 5px;
+                            padding-right: 5px;
+                            border-right: 1px solid #D1D1D1;
+                        }
+                        .add{
+                            float: right;
+                            margin-right: 5px;
+                            padding-left: 5px;
+                            border-left: 1px solid #D1D1D1;
+                        }
+                    }
+                }
+                
+                
+            }
+        }
+
+
+    }
+
+    
+    // 点餐页面的footer
+    ion-footer{
+        position: fixed;
+        bottom: 0;
+        background: #474747 !important;
+        .footer-ios .toolbar-ios:first-child .toolbar-background-ios{
+            border:none !important;
+        }
+        .toolbar-background-ios{
+            background: #474747;
+        }
+        .toolbar-ios{
+            padding: 0;
+        }
+        .toolbar-title-ios{
+            text-align: left;
+        }
+        button{
+            height: 100% !important;
+            float: right;
+            background: #F05D39;
+            color: white;
+            padding: 15px 30px;
+            font-size: 14px;
+        }
+        ion-icon{
+            height: 40px;
+            width: 40px;
+            border-radius: 100%;
+            background: #F05C38;
+        }
+        .toolbar-ios ion-title{
+            padding: 0 65px 1px;
+        }
+        .toolbar-title-ios{
+            font-size: 14px;
+        }
+    }
+    .aaaa{
+        height: 50px;
+        width: 50px;
+        border-radius: 100%;
+        background: #F05C38;
+        position: absolute;
+        bottom: 5px;
+        z-index: 999;
+        display: inline-block;
+        left:10px;
+        text-align: center;
+        color: white;
+        font-size: 40px;
+        line-height: 50px;
+    }
+    // 显示点餐的数量
+    .footerNumber{
+        height: 15px;
+        width: 15px;
+        background: red;
+        color: white;
+        font-size: 10px;
+        display: block;
+        border-radius: 100%;
+        line-height: 15px;
+        text-align: center;
+        position: absolute;
+        left: 48px;
+        top:-11px;
+        z-index: 9999;
+    }
+    
+}

@@ -1,0 +1,68 @@
+page-modal {
+    ion-content{
+        background: rgba(0,0,0,0.5) !important;
+        .show{
+            width: 250px;
+            height: auto;
+            background: white;
+            border-radius: 10px;
+            // margin: 0 auto;
+            // margin-top: 30%;
+
+            overflow: hidden;
+            position: relative;
+            left:50%;
+            top:15%;
+            margin-left: -125px;
+            padding-bottom: 40px;
+            .mes{
+                color: white;
+                font-size: 16px;
+                text-align: center;
+                padding: 8px 0;
+                background: #F05C38;
+            }
+            // 底部按钮
+            .footer{
+                position: absolute;
+                bottom:0;
+                height: 40px;
+                width: 100%;
+                .cancal{
+                    background: #B3B3B3;
+                }
+                .sure{
+                    background: #F05C38;
+                }
+                button{
+                    width: 50%;
+                    float: left;
+                    font-size: 16px;
+                    color: white;
+                    text-align: center;
+                    padding: 5px 0;
+                    height: 100%;
+                }
+            }
+            .navlist{
+                text-align: center;
+                font-size: 16px;
+                color: #5B5B5B;
+                border-bottom: 1px solid #D7D7D7;
+                margin: 0;
+                padding: 8px 0;
+             }
+             .active{
+                 position: relative;
+                 background: #F0F0F0;
+             }
+             .scroll{
+                height: 300px;
+                overflow-y: scroll;
+            
+             }
+ 
+        }
+    }
+    
+}

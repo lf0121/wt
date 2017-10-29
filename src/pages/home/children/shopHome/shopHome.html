@@ -1,0 +1,229 @@
+<ion-header>
+    <ion-navbar class="headBar">
+        <p class="headerText">{{ bname }}</p>
+        <img class="shareImg" src="../assets/images/shareImg.png" alt="">
+    </ion-navbar>
+    
+    <ion-grid>
+        <ion-row>
+            <ion-col col-2>
+                <img src="{{ shopImg }}" alt="">
+            </ion-col>
+            <ion-col col-8>
+                    <h6>{{ bname }}</h6>
+                    <p>
+                        <ion-icon name="md-volume-up"></ion-icon>
+                        温馨提示：营业时间：{{ workTime }}
+                    </p>
+            </ion-col>
+            <ion-col col-2 (tap)='save()'>
+                <ion-icon *ngIf='saveEd' name="ios-star-outline"></ion-icon>
+                <p *ngIf='saveEd' >收藏</p>
+                <ion-icon *ngIf='!saveEd' class="saveEdIcon" name="ios-star-outline"></ion-icon>
+                <p *ngIf='!saveEd' class="saveEdText">已收藏</p>
+            </ion-col>
+        </ion-row>
+        <hr>
+      </ion-grid>
+      
+      <ion-list>
+          <button ion-item>
+            <img src="../assets/images/first.png" alt="">
+            <span>新用户立减13元,首次使用银行卡最高减...</span>
+          </button>  
+      </ion-list>
+
+      <div>
+          <ion-segment [(ngModel)]="choose">
+              <ion-segment-button value="orderFood">
+                  <span>点菜</span>
+              </ion-segment-button>
+              <ion-segment-button value="reserveFood">
+                  <span>预定</span>
+              </ion-segment-button>
+              <ion-segment-button value="shop">
+                  <span>店铺</span>
+              </ion-segment-button>
+              <ion-segment-button value="evaluate">
+                  <span>评价</span>
+              </ion-segment-button>
+          </ion-segment>
+      </div>
+
+</ion-header>
+
+
+
+<ion-content>
+ 
+  
+  <!-- 选择内容 -->
+  <div [ngSwitch]="choose">
+    <!-- 点菜 -->
+    <div class="bigBox" *ngSwitchCase="'orderFood'">
+        <div class="allcontent">
+            <!-- 左边选择的菜系 -->
+            <div class="navleft">
+                <div class="navlist" *ngFor="let item of foodType, let i = index" [ngClass]="{'active':navid==i}" (tap)="navclick(i,item)">
+                    {{item.name}}
+                </div>
+            </div>
+
+            <!-- 右边的 -->
+            <div class="showcontent">
+                <h6>{{ chooseType }}</h6>
+
+                    <div *ngIf='haveFood'>
+                        <ion-item *ngFor='let item of foodDetail; let i = index;'>
+                                <ion-thumbnail item-start>
+                                    <img src="{{ item.image }}">
+                                </ion-thumbnail>
+                                <h2>{{ item.name }}</h2>
+                                <p>月销：{{ item.sale_num }}</p>
+                                <span>￥{{ item.price }}/{{ item.unit_name }}</span>
+                                <!-- 点菜 -->
+                                <div item-end class="payNumber">
+                                    <ion-icon name="md-remove-circle" (tap)='removeNumber(i,item)'></ion-icon>
+                                    <span class="showNumber">{{ item.num }}</span>
+                                    <ion-icon name="md-add-circle" (tap)='addNumber(i,item)'></ion-icon>
+                                </div>
+                        </ion-item>
+                    </div>
+                    <p class="noneFood" *ngIf='!haveFood' >
+                        抱歉，没有此菜品哦！
+                    </p>
+                  
+            </div>
+        <div style="clear:both"></div>
+        </div> 
+
+
+        <!-- 点菜页面的footer -->
+    <ion-footer>
+        <ion-icon class="aaaa" name="ios-cart-outline" (tap)='enterFoodCar(a)' ></ion-icon>
+        <span class="footerNumber">{{ allNumber }}</span>
+        <ion-toolbar>
+            <ion-title>￥{{ allPrice }}</ion-title>
+            <button (tap)='openPay( allPrice )'>去结算</button>
+        </ion-toolbar>
+    </ion-footer>
+
+
+
+    </div>
+
+    
+
+    <!-- 预定 -->
+    <ion-list class="reserveFood" *ngSwitchCase="'reserveFood'">
+        <div class="reserveFoodList first">
+            <p>用&nbsp;户&nbsp;名:</p>
+            <input class="input" type="text" placeholder="请输入您的名字" value='userName' [(ngModel)]='userName' >
+        </div>
+        <div class="reserveFoodList">
+            <p>电&nbsp;&nbsp;&nbsp;话：</p>
+            <input class="input" type="number" placeholder="请输入您的电话" value='userPhone' [(ngModel)]='userPhone' >
+        </div>
+        <div class="reserveFoodList">
+            <p>选择日期：</p>
+            <ion-datetime cancelText='取消' doneText='确定' displayFormat="YYYY-MM-DD HH:mm"  ></ion-datetime>
+        </div>
+        <div class="reserveFoodList">
+            <p>选择桌子：</p>
+            <input class="input" type="number" placeholder="请输入您需要的桌子" value='tableId' [(ngModel)]='tableId' >
+        </div>
+        <div class="reserveFoodList">
+            <p>用餐人数：</p>
+            <input class="input" type="number" placeholder="请输入您要用餐的人数" value='eatPerson' [(ngModel)]='eatPerson' >
+        </div>
+        <p>特殊要求：</p>
+        <textarea [(ngModel)]='remarks' value='remarks' ></textarea>
+        
+        <!-- 预定页面的footer -->
+        <ion-footer>
+            <ion-toolbar>
+                <ion-title>价格：￥0.00</ion-title>
+                <button (tap)='sublimits()' >提交</button>
+            </ion-toolbar>
+        </ion-footer>
+
+    </ion-list>
+
+    <!-- 店铺 -->
+    <ion-list class="shopAll" *ngSwitchCase="'shop'">
+        <div class="shopHouse first">
+          <ion-icon name="ios-pin"></ion-icon>
+          <p>{{ address }}</p>
+          <ion-icon class="call" name="ios-call"></ion-icon>
+        </div>
+        <div class="shopImg">
+            <ion-scroll scrollX="true"> 
+                <div class="showImg" *ngFor='let aaa of shopPic;let i=index;'>
+                    <img (tap)='showImg(aaa,i)'  src="{{ aaa.image }}" alt="">
+                </div>
+            </ion-scroll>
+        </div> 
+        <div class="foodMes" (tap)='enterSecurity( inforPic )' >
+            <img class="foodMesImg" src="../assets/images/security.png" alt="">
+            <p>查看食品安全档案</p>
+            <ion-icon class="call" name="ios-arrow-forward"></ion-icon>
+        </div>
+        <div class="workTime">
+            <ion-icon name="ios-stopwatch-outline"></ion-icon>
+            <p>营业时间：{{ workTime }}</p>
+        </div>
+
+        <div class="notive">
+            <ion-icon name="md-volume-up"></ion-icon>
+            <p>{{ notice }}</p>
+            <div style="clear:both"></div>
+        </div>
+    </ion-list>
+
+    <!-- 评价 -->
+    <div *ngSwitchCase="'evaluate'">
+        <div class="evaluateTitle">
+            <p class="evaluateTitleMes">
+                用户评论
+                <span>( {{ pjNum }} )</span>
+            </p>
+            <!-- 列表 -->
+            <div class="pjList" *ngFor='let pj of pjList;let i=index;'>
+                <ion-grid>
+                    <ion-row>
+                      <ion-col col-2>
+                          <img src="{{ pj.head_image }}" alt="">
+                      </ion-col>
+                      <ion-col col-6>
+                          <p class="userName">{{ pj.name }}</p>
+                          <ion-icon name="ios-star" class="xixistyle" [ngClass]="{'starhuang':i<starsnum}" *ngFor="let item of start;let i=index" (tap)='starthuang(i)'></ion-icon>
+                          <ion-icon name="ios-star"></ion-icon>
+                          <ion-icon name="ios-star"></ion-icon>
+                          <ion-icon name="ios-star"></ion-icon>
+                          <ion-icon name="ios-star"></ion-icon>
+                          <ion-icon name="ios-star"></ion-icon>
+                          <p class="pjListMes">{{ pj.content }}</p>
+                          <div class="pjListImg" >
+                              <img (tap)='showPjImg( pj.images )' src="{{ pj.images }}" alt="">
+                          </div>
+                      </ion-col>
+                      <ion-col col-4>{{ plstotime[i] }}</ion-col>
+                    </ion-row>
+                    
+                  </ion-grid>
+            </div>
+
+            
+
+
+        </div>
+    </div>
+
+  </div>
+
+
+    
+
+</ion-content>
+
+

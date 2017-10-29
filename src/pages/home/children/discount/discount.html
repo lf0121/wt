@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>优惠活动</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor='let item of lists'>
+        <ion-grid>
+            <ion-row>
+              <ion-col col-3>
+                  <p class="price">{{ item.price }}</p>
+                  <p class="useMes">{{ item.useMes }}</p>
+              </ion-col>
+              <ion-col col-7>
+                  <h2 class="text">{{ item.text }}</h2>
+                  <p class="useTime">使用时间：{{ item.useTime }}</p>
+              </ion-col>
+              <ion-col col-2>{{ item.overdue }}</ion-col>
+            </ion-row>
+        </ion-grid>
+      
+      </ion-card>
+
+    
+
+</ion-content>

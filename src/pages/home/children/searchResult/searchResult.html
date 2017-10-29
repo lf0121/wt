@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar>
+    <input (input)="onInput(keyWords)" (keydown)='onInput(keyWords)'  [(ngModel)]='keyWords' class="searchInput" placeholder="搜索" />
+    
+</ion-navbar>
+</ion-header>
+
+<ion-content>
+    <!--下拉刷新  -->
+	<ion-refresher (ionRefresh)="doRefresh($event)" >
+        <ion-refresher-content
+                        pullingIcon="arrow-dropdown"
+                        pullingText="Pull to refresh"
+                        refreshingSpinner="circles"
+                        refreshingText="加载中">
+        </ion-refresher-content>
+    </ion-refresher>
+
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 (tap)='click_1()'>
+            <button ion-button clear>{{ classification }}
+                <ion-icon name="ios-arrow-down"></ion-icon>
+            </button>
+        </ion-col>
+
+        <ion-col class="middle" col-6 (tap)='click_2()'>
+            <button ion-button clear >
+                    <!-- 地区视图 -->
+                    <city-picker item-content
+                                [cancelText]="'取消'"
+                                [doneText]="'完成'"
+                                [separator]="' - '"
+                                [citiesData]="cityData"
+                                [(ngModel)]="cityName"
+                                (ionChange)="cityChange($event)">
+                    </city-picker>
+                <ion-icon name="ios-arrow-down"></ion-icon>
+            </button>
+        </ion-col>
+
+      </ion-row>
+      
+    </ion-grid>
+
+    <!-- 搜索店铺的结果 -->
+    <ion-list>
+        <ion-item (tap)='enterShopHome(item)' *ngFor='let item of searchData' >
+            <ion-avatar item-start>
+                <img src="{{ item.image }}">
+            </ion-avatar>
+            <h2>{{ item.name }}</h2>
+            <ion-icon name="ios-star"></ion-icon>
+            <ion-icon name="ios-star"></ion-icon>
+            <ion-icon name="ios-star"></ion-icon>
+            <ion-icon name="ios-star"></ion-icon>
+            <ion-icon name="ios-star"></ion-icon>
+            <span class="number">{{ item.count_num }}条</span>
+            <p>
+                <ion-icon name="ios-pin"></ion-icon>
+                {{ item.gps_address }}
+            </p>
+            <p item-end class="position">{{ item.distance }}KM</p>
+        </ion-item>
+
+    </ion-list>
+  
+
+</ion-content>

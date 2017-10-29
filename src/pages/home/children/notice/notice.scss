@@ -1,0 +1,67 @@
+page-notice {
+    // 头部
+    .toolbar-title-ios{
+        color: white;
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+        background: #F05C38;
+        border: none;
+    }
+    .bar-button-default-ios{
+        color: white;
+    }
+    .back-button-text-ios{
+        display: none;
+    }
+
+    // 底部的固定样式
+    .scroll-content{
+        margin-bottom: 0 !important;
+    }
+    .fixed-content {
+        margin-bottom: 0 !important;
+    }
+
+    // content
+    ion-content{
+        background: #F2F2F2 !important;
+
+        // 卡片
+        ion-card{
+            background: white;
+        }
+        // 头部
+        .card-header-ios{
+            padding: 5px 0 5px 15px;
+            font-size: 10px;
+            color: #C8C8C8;
+            border-bottom: 1px solid #DFDFDF;
+        }
+
+        // 卡片内容
+        .list-ios{
+            margin: 0;
+        }
+        .item item-block item-ios{
+            border-bottom: none;
+        }
+        .item-ios ion-avatar ion-img, .item-ios ion-avatar img{
+            height:60px;
+            width:60px;
+            border:1px solid black;
+            border-radius: 5px;
+        }
+        .position{
+            font-size: 10px;
+            color: #959595;
+        }
+        .card-content-ios{
+            padding: 0;
+        }
+        .mes{
+            color: #C0C0C0;
+            font-size: 8px;
+        }
+    }
+    
+}

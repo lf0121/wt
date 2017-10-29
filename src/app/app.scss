@@ -1,0 +1,76 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+// 字体
+@font-face { // 这个全局都可以用,只要调用pingfang就可以
+    font-family: 'PingFang';
+    src:url('../assets/fonts/PingFang_Medium.ttf') format('truetype'); // 不需要兼容ie后面就不写了
+}
+
+body,ion-content{
+    font-family: "PingFang";
+}
+
+// 主页面tabs颜色
+.tabs-ios .tab-button[aria-selected=true] .tab-button-icon{
+    color: #F05C38;
+}
+.tabs-ios .tab-button:hover:not(.disable-hover), .tabs-ios .tab-button[aria-selected=true]{
+    color:#F05C38;
+}
+
+ion-scroll{
+    height: 320px;
+}
+
+// 搜索结果页面的toast
+
+.toast-ios .toast-wrapper.toast-top{
+    background: rgba(22, 22, 22, 0.3) !important;
+    width: 80%;
+}
+.toast-container{
+    // background: rgba(22, 22, 22, 0.3) !important;        
+}
+.toast-ios .toast-message{
+    // background: rgba(22, 22, 22, 0.3) !important;        
+}
+
+.alertCss{
+    h2{
+        font-size: 14px;
+    }
+}
+
+// 退菜页面 修改就餐人数
+.editPeople{
+    h2{
+        font-size: 14px;
+        // color: #F05C38;
+        // color: #999999;
+        font-family: 'PingFang';
+    }
+    .button-inner{
+        font-family: 'PingFang';
+        font-weight: bolder;
+        font-size: 12px;
+    }
+    .alert-input{
+        text-align: center;
+    }
+}
+

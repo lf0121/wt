@@ -1,0 +1,61 @@
+page-user {
+    // 头部
+    .toolbar-title-ios{
+        color: white;
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+        background: #F05C38;
+        border: none;
+    }
+    .bar-button-default-ios{
+        color: white;
+    }
+    // .back-button-text-ios{
+    //     display: none;
+    // }
+
+    // 底部的固定样式
+    // .scroll-content{
+    //     margin-bottom: 0 !important;
+    // }
+    // .fixed-content {
+    //     margin-bottom: 0 !important;
+    // }
+
+    // 内容区
+    .list-ios{
+        margin: 0 !important;
+    }
+    .item-block{
+        border-top: none !important;
+    }
+    // 点击的效果  取消默认的
+    .item-ios.activated{
+        background: none !important;
+    }
+    // 头像
+    .item-ios ion-avatar{
+        border:1px solid salmon !important;
+        border-radius: 100%;
+    }
+    // 文字
+    ion-label{
+        font-size: 14px;
+        color: black;
+    }
+    // 昵称输入区
+    .name{
+        width: 70% !important;
+        // background: pink;
+        border:none;
+        text-align: right;
+        overflow: hidden; /*自动隐藏文字*/
+        text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+        white-space: nowrap;/*强制不换行*/
+    }
+    // 性别 倒三角
+    .select-ios .select-icon{
+        display: none !important;
+    }
+    
+}

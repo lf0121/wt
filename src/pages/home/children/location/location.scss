@@ -1,0 +1,101 @@
+page-location {
+    ion-content{
+        background: #F5F5F5 !important;
+    }
+    ion-navbar{
+        background: white;
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+        background: white;
+        
+    }
+    .back-button-text-ios{
+        display: none;
+    }
+    .button-inner{
+        color: #7E7E7E;
+    }
+    .searchInput{
+        padding: 0;
+        background: none;
+        margin: 0 auto;
+        border:none;;
+        width: 80%;
+        .searchbar-search-icon{
+            // display: none;
+            margin-left: 3px !important;
+            // margin-top: 3px !important;
+
+        }
+        .searchbar-input{
+            color: #777;
+            font-size: 10px;
+            border-radius: 30px !important;
+            padding-left: 30px !important;
+        }
+    }
+
+    // 底部的固定样式
+    .scroll-content{
+        margin-bottom: 0 !important;
+    }
+    .fixed-content {
+        margin-bottom: 0 !important;
+    }
+
+    // 内容区
+    .locationGrid{
+        // background: white;
+        // margin-top: 10px;
+        [col-3]{
+            button{
+                padding: 7px 20px;
+                background: #F05C38;
+                color: white;
+                font-size: 14px;
+                text-align: center;
+                border-radius: 5px;
+            }
+        }
+        [col-2]{
+            font-size: 14px;
+            color: #626262;
+            text-align: left;
+            margin-top: 5px;
+        }
+        [col-7]{
+            font-size: 14px;
+            color: #626262;
+            margin-top: 5px;     
+            div{
+                width: 66px;
+                float: left;
+                overflow: hidden; /*自动隐藏文字*/
+                text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+                white-space: nowrap;/*强制不换行*/
+                span{
+                    margin: 0;
+                    display: block;
+                    float: left;
+                    max-width: 43px;
+                    width: 43px;
+                    overflow: hidden; /*自动隐藏文字*/
+                    text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+                    white-space: nowrap;/*强制不换行*/
+    
+                }
+                ion-icon{
+                    font-size: 18px;
+                    margin-left: 5px;
+                    float: left;
+                    margin-left: 5px;
+                }
+            }
+            
+        }
+    }
+
+    
+    
+    
+}

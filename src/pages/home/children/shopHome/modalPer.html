@@ -1,0 +1,16 @@
+
+<ion-content>
+    <div class="show">
+        <div class="head">选择就餐人数</div>
+        <div class="scroll" overflow-scroll='true'>
+            <p *ngFor='let num of array; let i=index'  [ngClass]="{'active':navid==i}" (tap)='clicks( i,num )' >{{ num }}</p>
+        </div>
+        <div class="btn">
+            <p class="cancel" (tap)='cancel()' >取消</p>
+            <p class="sure" (tap)='sure( choose )' >确定</p>
+            <div style="clear:both"></div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+
+</ion-content>
